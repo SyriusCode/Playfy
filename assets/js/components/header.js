@@ -12,7 +12,12 @@ export function loadHeader(container, isPagesPage = false) {
     container.innerHTML = `
         <div class="header-content">
         
-            <a class="logo" href="${rootPrefix}index.html"><img src="${rootPrefix}assets/img/banners/playfy_logo.png" width="200" height="100" alt="Logo de Playfy"></a>
+            <a class="logo" href="${rootPrefix}index.html">
+            <img 
+                src="${rootPrefix}assets/img/banners/playfy_logo.png"
+                alt="Playfy - Inicio"
+            >
+            </a>
 
             <nav class="header-nav" aria-label="Navegación principal">
                 <a href="${rootPrefix}index.html">Inicio</a>
@@ -34,7 +39,9 @@ export function loadHeader(container, isPagesPage = false) {
                         class="header-icon"
                     >
                 </a>
-                <a href="${pagesPrefix}registro.html" aria-label="Registro">Registro</a>
+                <a href="${pagesPrefix}registro.html" class="header-register" aria-label="Registro">
+                    Registrarse
+                </a>
             </div>
         </div>
     `;
