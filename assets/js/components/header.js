@@ -2,7 +2,7 @@
  * Carga el Header común de Playfy en el contenedor indicado.
  *
  * @param {HTMLElement} container
- * @param {string} pagePrefix Prefijo para las páginas ubicadas en pages/.
+ * @param {boolean} isPagesPage Indica si la página actual es una página en la carpeta pages/.
  */
 
 export function loadHeader(container, isPagesPage = false) {
@@ -11,18 +11,30 @@ export function loadHeader(container, isPagesPage = false) {
 
     container.innerHTML = `
         <div class="header-content">
-            <a class="logo" href="${rootPrefix}index.html">Playfy</a>
+        
+            <a class="logo" href="${rootPrefix}index.html"><img src="${rootPrefix}assets/img/banners/playfy_logo.png" width="200" height="100" alt="Logo de Playfy"></a>
 
-            <nav aria-label="Navegación principal">
+            <nav class="header-nav" aria-label="Navegación principal">
                 <a href="${rootPrefix}index.html">Inicio</a>
                 <a href="${pagesPrefix}catalogo.html">Catálogo</a>
                 <a href="${pagesPrefix}contacto.html">Contacto</a>
             </nav>
 
             <div class="header-actions">
-                <a href="${pagesPrefix}carrito.html">Carrito</a>
-                <a href="${pagesPrefix}login.html">Login</a>
-                <a href="${pagesPrefix}registro.html">Registro</a>
+                <a href="${pagesPrefix}carrito.html" aria-label="Carrito">
+                    <img 
+                        src="${rootPrefix}assets/img/icons/carrito.svg"
+                        class="header-icon"
+                    >
+                </a>
+
+                <a href="${pagesPrefix}login.html" aria-label="Login">
+                    <img
+                        src="${rootPrefix}assets/img/icons/usuario.svg"
+                        class="header-icon"
+                    >
+                </a>
+                <a href="${pagesPrefix}registro.html" aria-label="Registro">Registro</a>
             </div>
         </div>
     `;

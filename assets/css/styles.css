@@ -1,1 +1,85 @@
-/* Estilos generales */
+/* ESTILOS GENERALES */
+
+/* IMPORTACIÓN DE TIPOGRAFÍAS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* =================== 1. PALETA DE COLORES =================== */
+
+:root {
+    /* Fondos */
+    --color-fondo: #101426;
+    --color-superficie: #1C2440;
+
+    /* Colores de acento */
+    --color-primario: #7B61FF;
+    --color-secundario: #00D9FF;
+
+    /* Textos */
+    --color-texto-principal: #F4F6FF;
+    --color-texto-secundario: #A0A8C0;
+
+    /* Tipografía */
+    --fuente-titulos: "Space Grotesk", sans-serif;
+    --fuente-texto: "Inter", sans-serif;
+}
+
+/* =================== 2. TIPOGRAFÍA =================== */
+
+/* Fuente general */
+body {
+    font-family: var(--fuente-texto);
+}
+
+/* Títulos y encabezados */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-titulos);
+}
+
+/* Formularios y botones */
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+/* ===================== 3. ESTILOS GENERALES ===================== */
+/* Reset de márgenes y rellenos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Config general de la página */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Enlaces */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Imágnes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Listas */
+ul, ol {
+    list-style: none;
+}
+
+/* Botones */
+button {
+    cursor: pointer;
+}
+
+/* Formularios */
+input, textarea, select {
+    font: inherit;
+}
