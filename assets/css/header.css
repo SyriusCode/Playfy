@@ -51,7 +51,22 @@ header {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 10px;
+}
+
+.header-actions .carrito {
+    padding: 10px;
+}
+
+.carrito svg {
+    color: var(--color-primario);
+    width: 32px;
+    height: 32px;
+    transition: color 0.33s ease;
+}
+
+.carrito svg:hover {
+    color: var(--color-secundario);
 }
 
 .header-actions a {
