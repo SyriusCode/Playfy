@@ -1,1 +1,140 @@
 /* Estilos específicos de contacto */
+/* CONTENEDOR MAIN */
+.contacto {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+.contacto-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contacto-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contacto-intro p {
+    color: var(--color-texto-secundario);
+}
+
+/* CONTACTO SUPERIOR ( MAPA Y CARDS ) */
+.contacto-superior {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.contacto-mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 12px;
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacto-card {
+    background-color: var(--color-superficie);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.contacto-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contacto-card p {
+    color: var(--color-texto-secundario);
+    font-size: 15px;
+}
+
+/* CONTACTO INFERIOR ( DESCRIPCION Y FORMULARIO ) */
+.contacto-inferior {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.contacto-formulario, 
+.contacto-descripcion {
+    background-color: var(--color-superficie);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.contacto-formulario h2, .contacto-descripcion h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* DESCRIPCION */
+.contacto-descripcion p {
+    color: var(--color-texto-secundario);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* FORMULARIO */
+.contacto-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-grupo label {
+    color: var(--color-texto-secundario);
+}
+
+.form-grupo input,
+.form-grupo textarea {
+    width: 100%;
+    padding: 10px auto;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    border: 1px solid #343D5B;
+    border-radius: 8px;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    border-color: var(--color-primario);
+}
+
+.btn-contacto {
+    width: 100%;
+    padding: 13px;
+    background-color: var(--color-primario);
+    color: var(--color-texto-principal);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: var(--fuente-texto);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-contacto:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+}

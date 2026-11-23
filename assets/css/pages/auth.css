@@ -1,1 +1,165 @@
 /* Estilos específicos de autenticación */
+
+/* CONTENEDOR PRINCIPAL DE LOGIN - REGISTRO */
+.auth {
+    max-width: 1200px;
+    min-height: 70vh;
+    margin: 0 auto;
+    padding: 60px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TARJETA AUTH */
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background-color: var(--color-superficie);
+    border-radius: 15px;
+}
+
+/* INTRODUCCION AL FORMULARIO */
+.auth-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-intro h1 {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+.auth-intro p {
+    color: var(--color-texto-secundario);
+    font-size: 14px;
+}
+
+.auth-intro p::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: var(--color-primario);
+    margin: 10px auto 0 auto;
+}
+
+/* FORMULARIO */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-grupo label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-grupo input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    border: 1px solid #343D5B;
+    border-radius: 8px;
+    font-family: var(--fuente-texto);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-grupo input:focus {
+    border-color: var(--color-primario);
+}
+
+.form-grupo input::placeholder {
+    color: var(--color-texto-secundario);
+}
+
+/* OPCIONES */
+.auth-opcion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: var(--color-texto-secundario);
+    cursor: pointer;
+}
+
+.checkbox input {
+    accent-color: var(--color-secundario);
+}
+
+.politica-privacidad {
+    color: var(--color-primario);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.politica-privacidad:hover {
+    color: var(--color-secundario);
+}
+
+.recuperar-password {
+    font-size: 14px;
+    color: var(--color-texto-secundario);
+    transition: color 0.3s ease;
+}
+
+.recuperar-password:hover {
+    text-decoration: underline;
+    color: var(--color-secundario);
+}
+
+/* BOTON ENVIO */
+.btn-auth {
+    width: 100%;
+    padding: 13px;
+    background-color: var(--color-primario);
+    color: var(--color-texto-principal);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: var(--fuente-texto);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-auth:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+}
+
+/* ENLACE REGISTRO - LOGIN */
+.auth-otra-opcion {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-texto-secundario);
+}
+
+.auth-otra-opcion a {
+    color: var(--color-primario);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.auth-otra-opcion a:hover {
+    color: var(--color-secundario);
+}

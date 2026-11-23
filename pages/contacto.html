@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,92 @@
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/pages/contacto.css">
 </head>
+
 <body>
     <!-- Header común -->
     <header id="site-header"></header>
 
-    <main>
-        <!-- Contenido de la página de contacto -->
+    <main class="contacto">
+        <div class="contacto-intro">
+            <h1>Contacta con nosotros</h1>
+            <p>¿Tienes alguna duda? Estamos aquí para ayudarte.</p>
+        </div>
+        <div class="contacto-superior">
+            <div class="contacto-mapa">
+                <iframe src="https://maps.google.com/maps?q=43.5240324,-5.6142076&z=18&output=embed" width="100%"
+                    height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación de Playfy">
+                </iframe>
+            </div>
+
+            <div class="contacto-info">
+                <article class="contacto-card">
+                    <h2>Horario</h2>
+                    <p>Lunes a viernes</p>
+                    <p>Horario de atención por confirmar.</p>
+                </article>
+                <article class="contacto-card">
+                    <h2>Contacto</h2>
+                    <p>Utiliza nuestro formulario para enviarnos tus consultas.</p>
+                </article>
+
+                <article class="contacto-card">
+                    <h2>Localización</h2>
+                    <p>C. Luis Moya Blanco, 39, Periurbano - Rural, 33203 Gijón, Asturias, España</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="contacto-inferior">
+            <div class="contacto-descripcion">
+                <h2>¿Necesitas ayuda?</h2>
+
+                <p>En Playfy queremos que tu experiencia sea lo más sencilla y satisfactoria posible. Por eso, ofrecemos una plataforma
+                intuitiva donde puedas descubrir nuevos videojuegos, explorar nuestro catálogo y encontrar fácilmente los títulos que
+                más te interesan.</p>
+
+                <p>Si tienes alguna pregunta sobre nuestro catálogo, el funcionamiento de la web o encuentras alguna dificultad durante la
+                navegación, puedes utilizar el formulario para ponerte en contacto con nosotros. Estaremos encantados de atender tus
+                consultas y resolver cualquier duda.</p>
+
+                <p>Además, valoramos las opiniones y sugerencias de nuestros usuarios. Si tienes alguna idea para mejorar el diseño,
+                incorporar nuevas funcionalidades o facilitar la navegación, nos gustaría conocerla. Nuestro objetivo es seguir
+                mejorando Playfy para ofrecer una experiencia cada vez más completa.</p>
+            </div>
+
+            <div class="contacto-formulario">
+                <h2>Envíanos un mensaje</h2>
+
+                <form id="contacto-form">
+
+                    <div class="form-grupo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-contacto">
+                        Enviar mensaje
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer común -->
@@ -22,4 +103,5 @@
 
     <script type="module" src="../assets/js/main.js"></script>
 </body>
+
 </html>

@@ -86,14 +86,6 @@
     border-color: var(--color-primario);
 }
 
-.juego-enlace {
-    display: block;
-}
-
-.juego-enlace:hover .juego-nombre {
-    color: rgb(255, 255, 108);
-}
-
 .juego-card img {
     width: 100%;
     aspect-ratio: 3 / 4;
@@ -162,6 +154,7 @@
 }
 
 .valoraciones h2 {
+    text-align: center;
     font-size: 26px;
     margin-bottom: 20px;
 }
@@ -178,13 +171,23 @@
     border-radius: 10px;
 }
 
-.valoracion-estrellas {
-    color: var(--color-secundario);
-    margin-bottom: 10px;
+.estrellas  {
+    display: flex;
+    gap: 4px;
+    margin: 10px 0;
+}
+
+.estrella {
+    color: #555B70;
+    font-size: 22px;
+}
+
+.estrella.activa {
+    color: #FFC107;
 }
 
 .valoracion-card p {
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 15px;
 }
 
