@@ -1,1 +1,36 @@
 /* Estilos específicos de quiénes somos */
+.quienes-somos {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 40px 30px;
+}
+
+.quienes-somos h1 {
+    color: var(--color-texto-principal);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.info-card, .ubication {
+    background-color: var(--color-superficie);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+
+.info-card h2, .ubication h2 {
+    color: var(--color-secundario);
+    margin-bottom: 15px;
+}
+
+.info-card p, .ubication p {
+    color: var(--color-texto-secundario);
+    line-height: 1.6;
+}
