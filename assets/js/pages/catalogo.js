@@ -1,3 +1,6 @@
+import { videojuegos } from "../data/videojuegos.js";
+import { actualizarContadorCarrito } from "../components/contador-carrito.js";
+
 
 /* =========================================
    1. VARIABLES DE LOS FILTROS
@@ -40,169 +43,10 @@ const grid = document.getElementById("catalogo-grid");
 // Contenedor de los botones de paginación
 const paginacion = document.getElementById("paginacion");
 
-
-/* =========================================
-   3. ARRAY DE VIDEOJUEGOS
-========================================= */
-
-
-const videojuegos = [
-    // ===== ACCIÓN =====
-    {
-        id: "gtavi",
-        nombre: "GTA VI",
-        precio: 79.99,
-        categoria: "accion",
-        plataformas: ["ps5"],
-        imagen: "GTAVI.avif"
-    },
-    {
-        id: "mw4",
-        nombre: "Modern Warfare 4",
-        precio: 79.99,
-        categoria: "accion",
-        plataformas: ["pc", "ps5"],
-        imagen: "MW4.webp"
-    },
-    {
-        id: "doom",
-        nombre: "DOOM: The Dark Ages",
-        precio: 69.99,
-        categoria: "accion",
-        plataformas: ["pc", "ps5"],
-        imagen: "DOOM.avif"
-    },
-    {
-        id: "cyberpunk",
-        nombre: "Cyberpunk 2077",
-        precio: 39.99,
-        categoria: "accion",
-        plataformas: ["pc", "ps5", "switch"],
-        imagen: "Cyberpunk.avif"
-    },
-    {
-        id: "spiderman2",
-        nombre: "Marvel's Spider-Man 2",
-        precio: 59.99,
-        categoria: "accion",
-        plataformas: ["pc", "ps5"],
-        imagen: "spiderman2.jpg"
-    },
-    {
-        id: "eldenring",
-        nombre: "Elden Ring",
-        precio: 49.99,
-        categoria: "accion",
-        plataformas: ["pc", "ps5"],
-        imagen: "eldenring.jpg"
-    },
-
-    // ===== AVENTURA =====
-    {
-        id: "hogwarts",
-        nombre: "Hogwarts Legacy",
-        precio: 39.99,
-        categoria: "aventura",
-        plataformas: ["pc", "ps5", "switch"],
-        imagen: "Hogwarts.webp"
-    },
-    {
-        id: "zelda",
-        nombre: "Zelda: Tears of the Kingdom",
-        precio: 59.99,
-        categoria: "aventura",
-        plataformas: ["switch"],
-        imagen: "Zelda.avif"
-    },
-    {
-        id: "rdr2",
-        nombre: "Red Dead Redemption 2",
-        precio: 29.99,
-        categoria: "aventura",
-        plataformas: ["pc", "ps5"],
-        imagen: "RDR2.jpg"
-    },
-    {
-        id: "uncharted",
-        nombre: "Uncharted 4",
-        precio: 29.99,
-        categoria: "aventura",
-        plataformas: ["pc", "ps5"],
-        imagen: "Uncharted.webp"
-    },
-    {
-        id: "tlou",
-        nombre: "The Last of Us Part I",
-        precio: 49.99,
-        categoria: "aventura",
-        plataformas: ["pc", "ps5"],
-        imagen: "TLOU.avif"
-    },
-    {
-        id: "marioodyssey",
-        nombre: "Super Mario Odyssey",
-        precio: 49.99,
-        categoria: "aventura",
-        plataformas: ["switch"],
-        imagen: "MarioOdyssey.jpg"
-    },
-
-    // ===== DEPORTES =====
-    {
-        id: "fc27",
-        nombre: "EA Sports FC 27",
-        precio: 79.99,
-        categoria: "deportes",
-        plataformas: ["pc", "ps5", "switch"],
-        imagen: "FC27.avif"
-    },
-    {
-        id: "nba2k26",
-        nombre: "NBA 2K26",
-        precio: 59.99,
-        categoria: "deportes",
-        plataformas: ["pc", "ps5", "switch"],
-        imagen: "NBA2K26.avif"
-    },
-    {
-        id: "f125",
-        nombre: "F1 25",
-        precio: 49.99,
-        categoria: "deportes",
-        plataformas: ["pc", "ps5"],
-        imagen: "F125.jpg"
-    },
-    {
-        id: "gt7",
-        nombre: "Gran Turismo 7",
-        precio: 49.99,
-        categoria: "deportes",
-        plataformas: ["ps5"],
-        imagen: "GT7.webp"
-    },
-    {
-        id: "mariokart",
-        nombre: "Mario Kart 8 Deluxe",
-        precio: 49.99,
-        categoria: "deportes",
-        plataformas: ["switch"],
-        imagen: "MarioKart.webp"
-    },
-    {
-        id: "wwe2k26",
-        nombre: "WWE 2K26",
-        precio: 69.99,
-        categoria: "deportes",
-        plataformas: ["pc", "ps5"],
-        imagen: "WWE2K26.jpg"
-    }
-];
-
-
-
 /* =========================================
    4. FUNCIÓN PARA MOSTRAR EL CATÁLOGO
 ========================================= */
+
 
 function mostrarCatalogo() {
 
@@ -236,8 +80,7 @@ function mostrarCatalogo() {
     // Generamos el HTML de las tarjetas
     grid.innerHTML = juegosPagina.map(juego => `
 
-        <a href="detalle-producto.html?id=${juego.id}"
-           class="juego-card">
+        <article class="juego-card" data-id="${juego.id}">
 
             <img
                 src="../assets/img/products/${juego.imagen}"
@@ -252,7 +95,13 @@ function mostrarCatalogo() {
                 ${juego.precio.toFixed(2).replace(".", ",")} €
             </div>
 
-        </a>
+            <button type="button"
+                    class="btn-carrito"
+                    data-id="${juego.id}">
+                Añadir al carrito
+            </button>
+
+        </article>
 
     `).join("");
 
@@ -359,6 +208,79 @@ filtroPrecio.addEventListener("input", () => {
 /* =========================================
    7. INICIAR EL CATÁLOGO
 ========================================= */
+function anadirAlCarrito(id) {
+
+    // Buscamos el videojuego por su ID
+    const juego = videojuegos.find(juego => juego.id === id);
+
+    // Si no existe, terminamos la función
+    if (!juego) {
+        return;
+    }
+
+    // Recuperamos el carrito del almacenamiento local
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // Comprobamos si el videojuego ya está en el carrito
+    const juegoExistente = carrito.find(producto => producto.id === id);
+
+    if (juegoExistente) {
+
+        // Aumentamos la cantidad
+        juegoExistente.cantidad++;
+
+    } else {
+
+        // Añadimos un nuevo producto
+        carrito.push({
+            id: juego.id,
+            nombre: juego.nombre,
+            precio: juego.precio,
+            imagen: juego.imagen,
+            cantidad: 1
+        });
+    }
+
+    // Guardamos el carrito actualizado
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    // Actualizarmos el contador del  nav
+    actualizarContadorCarrito();
+}
+
+/* =========================================
+   8. EVENTOS DE LAS TARJETAS
+========================================= */
+
+grid.addEventListener("click", evento => {
+
+    const boton = evento.target.closest(".btn-carrito");
+    const tarjeta = evento.target.closest(".juego-card");
+
+    // Si pulsamos el botón del carrito
+    if (boton) {
+
+        anadirAlCarrito(boton.dataset.id);
+
+        // Cambiamos temporalmente el aspecto del botón
+        boton.textContent = "¡Añadido!";
+        boton.classList.add("anadido");
+
+        setTimeout(() => {
+            boton.textContent = "Añadir al carrito";
+            boton.classList.remove("anadido");
+        }, 1500);
+
+        return;
+    }
+
+    // Si pulsamos cualquier otra parte de la tarjeta
+    if (tarjeta) {
+
+        window.location.href =
+            `detalle-producto.html?id=${tarjeta.dataset.id}`;
+    }
+});
 
 // Mostramos los videojuegos al cargar la página
 mostrarCatalogo();

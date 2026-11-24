@@ -13,13 +13,44 @@
     <!-- Header común -->
     <header id="site-header"></header>
 
-    <main>
-        <!-- Contenido de la página del carrito -->
+    <main class="carrito-principal">
+        <h1>Mi carrito</h1>
+
+        <div class="carrito-contenido">
+            <section class="carrito-productos">
+                <h2>Mis juegos</h2>
+
+                <div id="carrito-lista" class="carrito-lista"></div>
+
+                <a href="catalogo.html" class="seguir-comprando">
+                    Seguir comprando
+                </a>
+            </section>
+
+            <!-- Resumen dell carrito -->
+            <aside class="carrito-resumen">
+                <h2>Resumen del carrito</h2>
+
+                <div id="resumen-productos" class="resumen-productos"></div>
+
+                <div class="resumen-total">
+                    <span>Total:</span>
+                    <span id="carrito-total">0,00 €</span>
+                </div>
+
+                <button type="button" id="finalizar-compra" class="btn-finalizar">
+                    Finalizar compra
+                </button>
+
+                <p id="mensaje-compra" class="mensaje-compra" role="status"></p>
+            </aside>
+        </div>
     </main>
 
     <!-- Footer común -->
     <footer id="site-footer"></footer>
 
     <script type="module" src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/pages/carrito.js"></script>
 </body>
 </html>

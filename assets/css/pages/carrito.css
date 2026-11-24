@@ -1,1 +1,258 @@
 /* Estilos específicos del carrito */
+
+
+/* MAIN - Distribucion */
+
+.carrito-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+
+}
+
+
+.carrito-principal h1 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.carrito-contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+.carrito-productos h2,
+.carrito-resumen h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* LISTTADO DE JUEGOS */
+.carrito-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.carrito-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+
+    background-color: var(--color-fondo);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.carrito-item img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    object-position: center;
+    background-color: var(--color-fondo);
+    border-radius: 6px;
+}
+
+.carrito-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.carrito-item-subtotal {
+    font-weight: 600;
+    text-align: right;
+    border-top: 1px solid #343D5B;
+    padding-top: 12px;
+    color: var(--color-secundario);
+}
+
+.carrito-cantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-cantidad {
+    width: 30px;
+    height: 30px;
+
+    background-color: var(--color-superficie);
+    color: var(--color-texto-principal);
+
+    border: 1px solid var(--color-primario);
+    border-radius: 5px;
+
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cantidad:hover:not(:disabled) {
+    background-color: var(--color-primario);
+}
+
+.btn-cantidad:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+
+.seguir-comprando {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--color-secundario);
+    text-decoration: none;
+}
+
+.seguir-comprando:hover {
+    text-decoration: underline;
+}
+
+.btn-eliminar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 15px auto 0;
+    background: none;
+    border: none;
+    color: #ff6464;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-eliminar svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-eliminar:hover {
+    text-decoration: underline;
+}
+
+.carrito-vacio {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 15px;
+    color: var(--color-texto-secundario);
+}
+
+
+/* =========================================
+   RESUMEN DEL PEDIDO
+========================================= */
+
+.resumen-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resumen-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 14px;
+    color: var(--color-texto-secundario);
+}
+
+.resumen-item span:last-child {
+    white-space: nowrap;
+    color: var(--color-texto-principal);
+}
+
+.resumen-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #343D5B;
+    margin-top: 25px;
+    padding-top: 25px;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#carrito-total {
+    color: var(--color-secundario);
+}
+
+.btn-finalizar {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+
+    background-color: var(--color-primario);
+    color: var(--color-texto-principal);
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: var(--fuente-texto);
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.btn-finalizar:hover:not(:disabled) {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+}
+
+.btn-finalizar:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.carrito-vacio {
+    text-align: center;
+    padding: 50px 15px;
+    color: var(--color-texto-secundario);
+}
+
+.mensaje-compra {
+    color: #66d99a;
+    text-align: center;
+    font-size: 14px;
+}
+
+.mensaje-compra:not(:empty) {
+    margin-top: 15px;
+}
+
+
+/* RESPONSIVE    */
+@media (max-width: 768px) {
+
+    .carrito-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .carrito-principal {
+        padding: 25px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .carrito-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .carrito-productos,
+    .carrito-resumen {
+        padding: 15px;
+    }
+}

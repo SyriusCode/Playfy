@@ -1,6 +1,7 @@
 
 import { loadHeader } from "./components/header.js";
 import { loadFooter } from "./components/footer.js";
+import { actualizarContadorCarrito } from "./components/contador-carrito.js";
 
 const headerContainer = document.querySelector("#site-header");
 const footerContainer = document.querySelector("#site-footer");
@@ -14,3 +15,5 @@ if (headerContainer) {
 if (footerContainer) {
     loadFooter(footerContainer, isPagesPage);
 }
+
+actualizarContadorCarrito();

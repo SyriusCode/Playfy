@@ -111,8 +111,35 @@ header {
     border-radius: 4px;
 }
 
+/* CONTADOR DEL CARRITO */
+.carrito {
+    position: relative;
+}
+
+.carrito-contador {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.contador-carrito[hidden] {
+    display: none;
+}
+
 /* ================ RESPONSIVE ============== */
-/* @media (max-width: 900px) {
+@media (max-width: 900px) {
 
     .header-content {
         flex-wrap: wrap;
@@ -164,4 +191,4 @@ header {
     .header-nav a {
         font-size: 14px;
     }
-} */
+}

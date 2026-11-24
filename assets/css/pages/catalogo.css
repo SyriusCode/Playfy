@@ -113,10 +113,36 @@
     text-decoration: none;
     color: var(--color-texto-principal);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .catalogo-grid .juego-card:hover {
     transform: translateY(-5px);
+}
+
+/* BOTON DE COMPRAR */
+.catalogo-grid .btn-carrito {
+    background-color: var(--color-primario);
+    color: var(--color-texto-principal);
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    margin: auto 12px 12px;
+    font-family: var(--fuente-texto);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.catalogo-grid .btn-carrito:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+}
+
+.catalogo-grid .btn-carrito.anadido {
+    background-color: #218838;
+    color: white;
 }
 
 /* IMAGENES */
@@ -166,6 +192,18 @@
     color: var(--color-fondo);
     border-color: var(--color-secundario);
     transform: translateY(-2px);
+}
+
+.paginacion button.activa {
+    background-color: var(--color-primario);
+    color: var(--color-texto-principal);
+    border-color: var(--color-primario);
+}
+
+.paginacion button.activa:hover {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+    transform: none;
 }
 
 /* RESPONSIVE */

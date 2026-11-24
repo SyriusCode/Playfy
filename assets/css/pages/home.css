@@ -126,6 +126,11 @@
     color: var(--color-fondo);
 }
 
+.juegos-grid .btn-carrito.anadido {
+    background-color: #218838;
+    color: white;
+}
+
 /* ===== BOTON CATALOGO ===== */
 .home-catalogo {
     display: flex;

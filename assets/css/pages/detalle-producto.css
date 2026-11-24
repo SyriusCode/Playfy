@@ -1,1 +1,303 @@
-/* Estilos específicos del detalle de producto */
+/* =========================================
+   1. CONTENEDOR PRINCIPAL
+========================================= */
+
+.detalle-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+
+/* =========================================
+   2. PRODUCTO PRINCIPAL
+========================================= */
+
+.detalle-producto {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: 50px;
+    padding: 40px;
+    background-color: var(--color-superficie);
+    border-radius: 12px;
+}
+
+
+/* =========================================
+   3. IMAGEN DEL PRODUCTO
+========================================= */
+
+.detalle-imagen {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.detalle-imagen img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   4. INFORMACIÓN DEL PRODUCTO
+========================================= */
+
+.detalle-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detalle-info h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 36px;
+    color: var(--color-texto-principal);
+}
+
+.detalle-categoria {
+    font-size: 15px;
+    color: var(--color-texto-secundario);
+}
+
+.detalle-precio {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-secundario);
+}
+
+.detalle-descripcion {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-texto-secundario);
+}
+
+.detalle-info h3 {
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   5. PLATAFORMAS DISPONIBLES
+========================================= */
+
+.detalle-plataformas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.plataforma {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    border: 1px solid var(--color-primario);
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   6. BOTONES DEL PRODUCTO
+========================================= */
+
+.detalle-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-volver,
+.btn-anadir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-family: var(--fuente-texto);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-volver {
+    background-color: transparent;
+    color: var(--color-texto-principal);
+    border: 1px solid var(--color-primario);
+}
+
+.btn-volver:hover {
+    background-color: var(--color-primario);
+}
+
+.btn-anadir {
+    background-color: var(--color-primario);
+    color: var(--color-texto-principal);
+    border: 1px solid var(--color-primario);
+}
+
+.btn-anadir:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    border-color: var(--color-secundario);
+}
+
+.btn-anadir.anadido {
+    background-color: #218838;
+    border-color: #218838;
+    color: white;
+}
+
+
+/* =========================================
+   7. PRODUCTOS SIMILARES
+========================================= */
+
+.productos-similares {
+    margin-top: 35px;
+    padding: 30px;
+    background-color: var(--color-superficie);
+    border-radius: 12px;
+}
+
+.productos-similares h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.similares-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+
+/* =========================================
+   8. TARJETAS DE PRODUCTOS SIMILARES
+========================================= */
+
+.similar-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 180px;
+    max-width: 220px;
+    min-width: 0;
+    background-color: var(--color-fondo);
+    border-radius: 10px;
+    overflow: hidden;
+    color: var(--color-texto-principal);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.similar-card:hover {
+    transform: translateY(-5px);
+}
+
+.similar-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: contain;
+}
+
+.similar-nombre {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px 15px 8px;
+}
+
+.similar-precio {
+    margin-top: auto;
+    padding: 0 15px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-secundario);
+}
+
+
+/* =========================================
+   9. DISEÑO RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+    .detalle-principal {
+        padding: 25px 15px;
+    }
+
+    .detalle-producto {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 25px;
+    }
+
+    .detalle-imagen {
+        max-width: 300px;
+    }
+
+    .detalle-info h1 {
+        font-size: 28px;
+    }
+
+    .detalle-precio {
+        font-size: 26px;
+    }
+
+    .productos-similares {
+        padding: 25px;
+    }
+
+    .similares-grid {
+        gap: 20px;
+    }
+}
+
+
+/* =========================================
+   10. DISEÑO RESPONSIVE - MÓVIL
+========================================= */
+
+@media (max-width: 480px) {
+
+    .detalle-producto {
+        padding: 20px;
+    }
+
+    .detalle-botones {
+        flex-direction: column;
+    }
+
+    .detalle-info h1 {
+        font-size: 24px;
+    }
+
+    .detalle-descripcion {
+        font-size: 14px;
+    }
+
+    .productos-similares {
+        padding: 20px;
+    }
+
+    .productos-similares h2 {
+        font-size: 20px;
+    }
+
+    .similar-card {
+        flex-basis: 100%;
+        max-width: 220px;
+    }
+}
