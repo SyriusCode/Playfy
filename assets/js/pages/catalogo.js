@@ -70,7 +70,7 @@ const videojuegos = [
         precio: 69.99,
         categoria: "accion",
         plataformas: ["pc", "ps5"],
-        imagen: "DOOM.webp"
+        imagen: "DOOM.avif"
     },
     {
         id: "cyberpunk",
@@ -78,7 +78,7 @@ const videojuegos = [
         precio: 39.99,
         categoria: "accion",
         plataformas: ["pc", "ps5", "switch"],
-        imagen: "Cyberpunk.webp"
+        imagen: "Cyberpunk.avif"
     },
     {
         id: "spiderman2",
@@ -86,7 +86,7 @@ const videojuegos = [
         precio: 59.99,
         categoria: "accion",
         plataformas: ["pc", "ps5"],
-        imagen: "Spiderman2.webp"
+        imagen: "spiderman2.jpg"
     },
     {
         id: "eldenring",
@@ -94,7 +94,7 @@ const videojuegos = [
         precio: 49.99,
         categoria: "accion",
         plataformas: ["pc", "ps5"],
-        imagen: "EldenRing.webp"
+        imagen: "eldenring.jpg"
     },
 
     // ===== AVENTURA =====
@@ -112,7 +112,7 @@ const videojuegos = [
         precio: 59.99,
         categoria: "aventura",
         plataformas: ["switch"],
-        imagen: "Zelda.webp"
+        imagen: "Zelda.avif"
     },
     {
         id: "rdr2",
@@ -120,7 +120,7 @@ const videojuegos = [
         precio: 29.99,
         categoria: "aventura",
         plataformas: ["pc", "ps5"],
-        imagen: "RDR2.webp"
+        imagen: "RDR2.jpg"
     },
     {
         id: "uncharted",
@@ -136,7 +136,7 @@ const videojuegos = [
         precio: 49.99,
         categoria: "aventura",
         plataformas: ["pc", "ps5"],
-        imagen: "TLOU.webp"
+        imagen: "TLOU.avif"
     },
     {
         id: "marioodyssey",
@@ -144,7 +144,7 @@ const videojuegos = [
         precio: 49.99,
         categoria: "aventura",
         plataformas: ["switch"],
-        imagen: "MarioOdyssey.webp"
+        imagen: "MarioOdyssey.jpg"
     },
 
     // ===== DEPORTES =====
@@ -162,7 +162,7 @@ const videojuegos = [
         precio: 59.99,
         categoria: "deportes",
         plataformas: ["pc", "ps5", "switch"],
-        imagen: "NBA2K26.webp"
+        imagen: "NBA2K26.avif"
     },
     {
         id: "f125",
@@ -170,7 +170,7 @@ const videojuegos = [
         precio: 49.99,
         categoria: "deportes",
         plataformas: ["pc", "ps5"],
-        imagen: "F125.webp"
+        imagen: "F125.jpg"
     },
     {
         id: "gt7",
@@ -194,7 +194,7 @@ const videojuegos = [
         precio: 69.99,
         categoria: "deportes",
         plataformas: ["pc", "ps5"],
-        imagen: "WWE2K26.webp"
+        imagen: "WWE2K26.jpg"
     }
 ];
 
